@@ -58,15 +58,24 @@
     
     <header class="header text-white py-4 shadow">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="display-5 fw-bold m-0">☕ Katalog Meja Kafe ☕</h1>
+            <div class="d-flex justify-content-between align-items-center"> <div class="flex-grow-1 text-center"> <h1 class="display-5 fw-bold m-0">☕ Katalog Meja Kafe ☕</h1>
                 </div>
+                @if (Auth::check())
+                <div>
+                    <a href="/changepassword" class="btn btn-outline-light btn-sm">
+                        <i class="bi bi-key me-1"></i> Ubah Password
+                    </a>
+                    <a href="/logout" class="btn btn-outline-light btn-sm">
+                        <i class="bi bi-box-arrow-right me-1"></i> Logout
+                    </a>
+                </div>
+                @endif
             </div>
         </div>
     </header>
 
     <main class="main-content flex-grow-1 py-4 py-md-5">
+        @yield('navbar')
         <div class="container">
             @yield('content')
         </div>
@@ -97,5 +106,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('scripts')
+    @if(session('success'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var msg = @json(session('success'));
+            if (typeof Swal !== 'undefined') {
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'success',
+                    title: msg,
+                    showConfirmButton: false,
+                    timer: 2500,
+                    timerProgressBar: true
+                });
+            } else {
+                alert(msg);
+            }
+        });
+    </script>
+    @endif
 </body>
 </html>

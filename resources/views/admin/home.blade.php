@@ -19,6 +19,22 @@
         }
 </style>
 @endsection
+@section('navbar')
+<div class="container-fluid">
+    <nav class="navbar navbar-dark p-3 navbar-expand-lg" style="background-color:#8B4513">
+        <a class="navbar-brand" href="/home">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-link {{ $key === 'home' ? 'active' : '' }} " href="/home">Home</span></a>
+            <a class="nav-link {{ $key === 'users' ? 'active' : '' }} " href="/users">Users</a>
+            </div>
+        </div>
+    </nav>
+</div>  
+@endsection
 @section('content')
     <div class="container my-5">
         <div class="">
@@ -139,25 +155,4 @@
         });
     });
 </script>
-@if(session('success'))
-<script>
-    document.addEventListener('DOMContentLoaded', function(){
-        var msg = @json(session('success'));
-        if (typeof Swal !== 'undefined') {
-            Swal.fire({
-                toast: true,
-                position: 'top-end',
-                icon: 'success',
-                title: msg,
-                showConfirmButton: false,
-                timer: 2500,
-                timerProgressBar: true
-            });
-        } else {
-            // fallback to alert
-            alert(msg);
-        }
-    });
-</script>
-@endif
 @endsection
