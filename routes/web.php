@@ -26,7 +26,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::group(['middleware' => ['guest']], function () {
     Route::get('/', 'VisitorController@home'); // endpoint utama web
-    
+
     Route::get('/login33231244', 'PageController@loginPage')->name('login');
     Route::post('/login33231244', 'AuthController@login');
 });

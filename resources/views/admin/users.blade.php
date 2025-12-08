@@ -1,5 +1,9 @@
 @extends('layouts.main')
 @section('title', 'Users Dashboard')
+@section('role')
+    Admin
+@endsection
+
 @section('styles')
 <link rel="stylesheet" href="https://cdn.datatables.net/2.3.5/css/dataTables.dataTables.css">
 <style>

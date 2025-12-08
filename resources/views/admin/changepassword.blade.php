@@ -1,5 +1,8 @@
 @extends('layouts.main')
 @section('title', 'Ubah Password')
+@section('role')
+    Admin
+@endsection
 
 @section('content')
 <div class="row justify-content-center">

@@ -1,5 +1,8 @@
 @extends('layouts.main')
 @section('title', 'Login Page')
+@section('role')
+    Admin
+@endsection
 
 @section('content')
 <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5">

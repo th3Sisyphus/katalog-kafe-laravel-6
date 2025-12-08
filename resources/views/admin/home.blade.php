@@ -1,5 +1,9 @@
 @extends('layouts.main')
 @section('title', 'Menu Dashboard')
+@section('role')
+    Admin
+@endsection
+
 @section('styles')
 <style>
     .card-add-new {

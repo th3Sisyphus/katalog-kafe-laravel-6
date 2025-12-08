@@ -1,6 +1,10 @@
 @extends('layouts.main')
 
 @section('title', 'Tambah Menu Baru')
+@section('role')
+    Admin
+@endsection
+
 @section('navbar')
 <div class="container-fluid">
     <nav class="navbar navbar-dark p-3 navbar-expand-lg" style="background-color:#8B4513">

@@ -58,10 +58,13 @@
     
     <header class="header text-white py-4 shadow">
         <div class="container">
-            <div class="d-flex justify-content-between align-items-center"> <div class="flex-grow-1 text-center"> <h1 class="display-5 fw-bold m-0">☕ Katalog Meja Kafe ☕</h1>
+            <div class="d-flex justify-content-between align-items-center"> <div class="flex-grow-1 text-center"> <h1 class="display-5 fw-bold m-0">☕ @yield('role') Meja Kafe ☕</h1>
                 </div>
                 @if (Auth::check())
                 <div>
+                    <div class="d-inline-block me-3 text-white">
+                        <strong>Anda login sebagai: </strong> {{ Auth::user()->name }}
+                    </div>
                     <a href="/changepassword" class="btn btn-outline-light btn-sm">
                         <i class="bi bi-key me-1"></i> Ubah Password
                     </a>

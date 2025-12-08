@@ -12,7 +12,10 @@ class VisitorController extends Controller
         // Mulai Query
         $query = Produk::query();
         $keyword = $request->search;
-        $query->where('nama_menu', 'LIKE', '%' . $keyword . '%');
+        
+        if ($keyword){
+            $query->where('nama_menu', 'LIKE', '%' . $keyword . '%');
+        }
         
         $produk = $query->orderBy('id_menu','desc')->get();
 

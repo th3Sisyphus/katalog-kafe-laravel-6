@@ -1,6 +1,10 @@
 @extends('layouts.main')
 
 @section('title', 'Tambah User Baru')
+@section('role')
+    Admin
+@endsection
+
 @section('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
 <style>
