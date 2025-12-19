@@ -73,7 +73,8 @@
                                            name="diskon" 
                                            value="0"
                                            min="0"
-                                           max="100">
+                                           max="100"
+                                           placeholder="0">
                                     <span class="input-group-text">%</span>
                                 </div>
                             </div>
@@ -86,6 +87,7 @@
                                        name="stok" 
                                        value="0"
                                        min="0"
+                                       placeholder="0"
                                        required>
                             </div>
                         </div>
