@@ -110,7 +110,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('scripts')
     @if(session('success'))
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function(){
             var msg = @json(session('success'));
@@ -119,6 +118,25 @@
                     toast: true,
                     position: 'top-end',
                     icon: 'success',
+                    title: msg,
+                    showConfirmButton: false,
+                    timer: 2500,
+                    timerProgressBar: true
+                });
+            } else {
+                alert(msg);
+            }
+        });
+    </script>
+    @elseif(session('error'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var msg = @json(session('error'));
+            if (typeof Swal !== 'undefined') {
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'error',
                     title: msg,
                     showConfirmButton: false,
                     timer: 2500,

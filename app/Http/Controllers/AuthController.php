@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function login(Request $request){
         if (!Auth::attempt(['email'=>$request->email, 'password' => $request->password])) {
-            return redirect('/');
+            return redirect('/')->with('error', 'Login Failed!! Wrong email or password');
         } else{
             return redirect('/home')->with('success', 'Login Successful',['key' => 'home']);
         }  
